@@ -128,8 +128,8 @@ begin
            i_clk  => w_TDM_clk,
            i_reset => '0',
            i_D3 => "1111",--F
-		   i_D2 => "1111",	--F	
-		   i_D1 => w_seg_2,		
+		   i_D2 => w_seg_2,	--F	
+		   i_D1 => "1111",		
 		   i_D0 => w_seg_1,	
 		   o_data => w_seg,
 		   o_sel => an
