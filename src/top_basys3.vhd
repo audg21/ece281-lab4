@@ -77,7 +77,6 @@ architecture top_basys3_arch of top_basys3 is
         );
     end component clock_divider;
 	
-	begin
 	
 	  
 begin
@@ -124,7 +123,9 @@ begin
        
     
     TDM4_inst : TDM4
-    generic (K_WIDTH : natural := 7);
+    generic map (
+    K_WIDTH => 7
+    )
     port map (
            i_clk  => w_TDM_clk,
            i_reset => '0',
