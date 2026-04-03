@@ -31,9 +31,7 @@ architecture top_basys3_arch of top_basys3 is
     signal w_clk_reset : std_logic;
     signal w_elev_reset : std_logic;
     signal w_seg_1 : std_logic_vector(3 downto 0);
---    signal w_D1 : std_logic_vector(3 downto 0);
     signal w_seg_2 : std_logic_vector(3 downto 0);
---    signal w_D3 : std_logic_vector(3 downto 0);
     
   
 	-- component declarations
@@ -124,16 +122,16 @@ begin
     
     TDM4_inst : TDM4
     generic map (
-    K_WIDTH => 7
+    K_WIDTH => 4
     )
     port map (
            i_clk  => w_TDM_clk,
            i_reset => '0',
-           i_D3 => "0001110",
-		   i_D2 => "0001110",		
+           i_D3 => "1111",--F
+		   i_D2 => "1111",	--F	
 		   i_D1 => w_seg_2,		
 		   i_D0 => w_seg_1,	
-		   o_data => seg,
+		   o_data => w_seg,
 		   o_sel => an
 		   );
 	-- CONCURRENT STATEMENTS ----------------------------
